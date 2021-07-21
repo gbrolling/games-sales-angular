@@ -1,0 +1,11 @@
+<h1>Lojas envolvidas na API que estão ativas</h1>
+
+<!-- listagem de lojas -->
+<ng-container *ngFor="let store of stores$ | async">
+  <div class="store_list_content" *ngIf="store.isActive===1">
+    <div class="store_list_card">
+      <p>{{ store.storeName }}</p>
+      <img src="https://www.cheapshark.com/{{ store.images.logo }}" alt=" {{ store.storeName }}"/>
+    </div>
+  </div>
+</ng-container>
