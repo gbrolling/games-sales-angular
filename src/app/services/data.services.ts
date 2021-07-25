@@ -19,7 +19,7 @@ export class DataService{
   }
 
   getDeals(){
-    return this.http.get<any[]>(`${this.url}/deals`)
+    return this.http.get<any[]>(`${this.url}/deals?storeID=1`)
   }
 
 }
