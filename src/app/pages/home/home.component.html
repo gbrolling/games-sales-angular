@@ -1,11 +1,27 @@
-<h1>Lojas envolvidas na API que estão ativas</h1>
-
-<!-- listagem de lojas -->
-<ng-container *ngFor="let store of stores$ | async">
-  <div class="store_list_content" *ngIf="store.isActive===1">
-    <div class="store_list_card">
-      <p>{{ store.storeName }}</p>
-      <img src="https://www.cheapshark.com/{{ store.images.logo }}" alt=" {{ store.storeName }}"/>
-    </div>
+<div class="home-container">
+  <h3 class="home-content">As melhores promoções do dia</h3>
+  <div class="home-daily-promo">
+    <ng-container  *ngFor='let deal of deals$ | async'>
+      <div class="home-daily-promo-card" *ngIf='deal.metacriticScore>80'>
+        <div class="home-daily-promo-card-photo">
+          <img src='{{deal.thumb}}' alt="photo" />
+        </div>
+        <div class="home-daily-promo-card-price">
+          <p>Preço Original: ${{deal.normalPrice}}</p>
+          <p>Preço na promoção: ${{deal.salePrice}}</p>
+        </div>
+        <div class="home-daily-promo-card-button">
+          <form action="https://store.steampowered.com/app/{{deal.steamAppID}}" target="_blank" rel="noopener noreferrer">
+            <input type="submit" value="Steam">
+          </form>
+        </div>
+      </div>
+    </ng-container>
   </div>
-</ng-container>
+  <div class="home-search-promo">
+    <h3>Procure por mais jogos abaixo!</h3>
+    <div class="home-search-input">
+      <input type="text" placeholder="Digite o nome do jogo" name="game" class="promo-input"/>
+     </div>
+  </div>
+</div>

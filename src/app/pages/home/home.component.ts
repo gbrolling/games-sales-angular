@@ -1,23 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataService } from 'src/app/services/data.services';
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  public stores$: Observable<any[]>;
+  public deals$: Observable<any[]>;
 
-  constructor(private dataService: DataService) {
-
+  constructor(public dataService: DataService) {
   }
 
   ngOnInit(): void {
-   this.stores$ = this.dataService.getStores();
-
+    this.deals$ = this.dataService.getDeals();
   }
 
 }

@@ -13,4 +13,13 @@ export class DataService{
   getStores(){
     return this.http.get<any[]>(`${this.url}/stores`);
   }
+
+  getGames(params){
+    return this.http.get<any[]>(`${this.url}/games?title=${params}`)
+  }
+
+  getDeals(){
+    return this.http.get<any[]>(`${this.url}/deals`)
+  }
+
 }
