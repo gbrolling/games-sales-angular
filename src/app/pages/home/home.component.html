@@ -2,7 +2,7 @@
   <h3 class="home-content">As melhores promoções do dia</h3>
   <div class="home-daily-promo">
     <ng-container  *ngFor='let deal of deals$ | async'>
-      <div class="home-daily-promo-card" *ngIf='deal.metacriticScore>80'>
+      <div class="home-daily-promo-card">
         <div class="home-daily-promo-card-photo">
           <img src='{{deal.thumb}}' alt="photo" />
         </div>
