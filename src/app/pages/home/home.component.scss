@@ -1,6 +1,7 @@
 @import "../../../styles.scss";
 
 .home-container {
+  margin-top: 50px;
   color: $primaryGray;
   text-align: center;
   .input {
@@ -12,7 +13,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 35px;
+    gap: 55px;
+    margin: 40px 0px 40px 0px;
+    :hover {
+      transform: scale(1.1);
+     }
+     h2{
+      pointer-events: none;
+     }
     .home-daily-promo-card {
       box-shadow: 9px 6px 34px -9px rgba(0, 0, 0, 0.43);
       -webkit-box-shadow: 9px 6px 34px -9px rgba(0, 0, 0, 0.43);
@@ -22,23 +30,27 @@
       place-items: center;
       height: 350px;
       width: 350px;
+
       .promo-on {
         width: 100%;
         height: 100%;
         border-bottom: 1px solid black;
         display: grid;
         place-items: center;
-        h1{
+        pointer-events: none;
+        h1 {
           margin: 0;
         }
       }
       .home-daily-promo-card-photo {
+        pointer-events: none;
         img {
           max-width: 84px;
           max-height: 153px;
         }
       }
       .home-daily-promo-card-price {
+        pointer-events: none;
         text-align: center;
         font-size: 15px;
       }
@@ -46,8 +58,13 @@
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 400px) {
   .home-container {
-    width: 100%;
+    .home-daily-promo {
+      .home-daily-promo-card {
+        height: 250px;
+        width: 250px;
+      }
+    }
   }
 }

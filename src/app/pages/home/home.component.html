@@ -7,7 +7,7 @@
       name="inputGameName"
     />
   </mat-form-field>
-  <button mat-button (click)="getDeals()">text</button>
+  <button class="uk-button" (click)="getDeals()">Procurar</button>
   <div class="home-daily-promo">
     <ng-container *ngFor="let deal of deals$ | async">
       <div class="home-daily-promo-card">
@@ -21,8 +21,8 @@
           <img src="{{ deal?.thumb }}" alt="photo" />
         </div>
         <div class="home-daily-promo-card-price">
-          <p>Preço Original: ${{ deal?.normalPrice }}</p>
-          <p>Preço na promoção: ${{ deal?.salePrice }}</p>
+          <p>Preço normal: ${{ deal?.normalPrice }}</p>
+          <p>Preço atual: ${{ deal?.salePrice }}</p>
         </div>
         <div class="home-daily-promo-card-button">
             <button class="uk-button uk-button-secondary" type="button" (click)="goToUrl(deal.dealID)">Ir para loja</button>
