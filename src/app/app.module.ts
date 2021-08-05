@@ -10,16 +10,12 @@ import {HttpClientModule } from '@angular/common/http';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 
-import { GamesListComponent } from './pages/games-list/games-list.component';
-import { GamesPageComponent } from './pages/games-page/games-page.component';
-import { StoresListComponent } from './pages/stores-list/stores-list.component';
-import { StoresPageComponent } from './pages/stores-page/stores-page.component';
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, GamesListComponent, GamesPageComponent, StoresListComponent, StoresPageComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
