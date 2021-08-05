@@ -1,25 +1,25 @@
-import { HttpClient, HttpClientModule } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class DataService{
-  public url = 'https://www.cheapshark.com/api/1.0'
-  constructor(private http: HttpClient){}
+export class DataService {
+  public url = 'https://www.cheapshark.com/api/1.0';
+  constructor(private http: HttpClient) {}
 
-  getStores(){
+  getStores() {
     return this.http.get<any[]>(`${this.url}/stores`);
   }
 
-  getGames(params){
-    return this.http.get<any[]>(`${this.url}/games?title=${params}`)
+  getGames(params) {
+    return this.http.get<any[]>(`${this.url}/games?title=${params}&steamRating=1`);
   }
 
-  getDeals(){
-    return this.http.get<any[]>(`${this.url}/deals?storeID=1`)
+  getDeals(name) {
+    return this.http.get<any[]>(`${this.url}/deals?steamRating=1&title=${name}`);
   }
+
 
 }

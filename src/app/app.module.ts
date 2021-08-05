@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import {HttpClientModule } from '@angular/common/http';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+
 import { GamesListComponent } from './pages/games-list/games-list.component';
 import { GamesPageComponent } from './pages/games-page/games-page.component';
 import { StoresListComponent } from './pages/stores-list/stores-list.component';
@@ -22,6 +25,8 @@ import { StoresPageComponent } from './pages/stores-page/stores-page.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
