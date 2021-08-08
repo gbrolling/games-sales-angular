@@ -7,22 +7,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import {HttpClientModule } from '@angular/common/http';
-import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from './material/material.module';
+import { AboutComponent } from './pages/about/about.component';
 
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, AboutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    MatInputModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
