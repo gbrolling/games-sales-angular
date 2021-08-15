@@ -13,7 +13,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 80px;
+    gap: 55px;
     margin: 40px 0px 40px 0px;
     :hover {
       transform: scale(1.1);
@@ -23,19 +23,35 @@
      }
     .home-daily-promo-card {
       border: 1px solid #ece4e4bd;
-      background-color: #f1efef;
+      background-color: $primaryBackground;
       display: grid;
-      grid-template-rows: 105px 1fr;
       place-items: center;
-      height: 220px;
-      width: 180px;
+      height: 350px;
+      width: 350px;
+
+      .promo-on {
+        background-color: rgb(9 236 49 / 72%);
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid black;
+        display: grid;
+        place-items: center;
+        pointer-events: none;
+        h1 {
+          margin: 0;
+        }
+      }
       .home-daily-promo-card-photo {
         pointer-events: none;
-        text-align: center;
         img {
-          min-width: 84px;
-          max-height: 100px;
+          max-width: 84px;
+          max-height: 153px;
         }
+      }
+      .home-daily-promo-card-price {
+        pointer-events: none;
+        text-align: center;
+        font-size: 15px;
       }
     }
   }

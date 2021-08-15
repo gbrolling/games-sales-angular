@@ -1,0 +1,31 @@
+<div class="home-container">
+  <h1>Todos os preços</h1>
+  <div class="home-daily-promo">
+    <ng-container *ngFor="let deal of deals$ | async">
+      <div class="home-daily-promo-card">
+        <ng-container *ngIf="deal.isOnSale == 1">
+          <div class="promo-on">
+            <h1>EM PROMOÇÃO!</h1>
+          </div>
+        </ng-container>
+        <h2>{{ deal?.title }}</h2>
+        <div class="home-daily-promo-card-photo">
+          <img src="{{ deal?.thumb }}" alt="photo" />
+        </div>
+        <div class="home-daily-promo-card-price">
+          <p>Preço normal: ${{ deal?.normalPrice }}</p>
+          <p>Preço atual: ${{ deal?.salePrice }}</p>
+        </div>
+        <div class="home-daily-promo-card-button">
+          <button
+            class="uk-button uk-button-secondary"
+            type="button"
+            (click)="goToUrl(deal.dealID)"
+          >
+            Ir para loja
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

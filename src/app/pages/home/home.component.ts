@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { DataService } from 'src/app/services/data.services';
 import { map } from 'rxjs/operators';
 import { from } from 'rxjs';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
   public deals$: Observable<any[]>;
   public inputGameName: string;
 
-  constructor(public dataService: DataService) {
+  constructor(public dataService: DataService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -21,13 +22,10 @@ export class HomeComponent implements OnInit {
   }
 
   getDeals(){
-    this.deals$ = of([]);
-    this.deals$ = this.dataService.getDeals(this.inputGameName);
-
+    this.games$ = of([]);
+    this.games$ = this.dataService.getGames(this.inputGameName)
   }
 
-  goToUrl(id){
-    window.open(`https://www.cheapshark.com/redirect?dealID=${id}`,'_blank');
-  }
+
 
 }

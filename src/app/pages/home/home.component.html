@@ -1,31 +1,24 @@
 <div class="home-container">
-  <mat-form-field class="input">
-    <input
-      matInput
-      placeholder="Nome do jogo"
-      [(ngModel)]="inputGameName"
-      name="inputGameName"
-    />
-  </mat-form-field>
-  <button class="uk-button" (click)="getDeals()">Procurar</button>
+  <div class="home-search">
+    <mat-form-field class="input">
+      <input
+        matInput
+        placeholder="Nome do jogo"
+        [(ngModel)]="inputGameName"
+        name="inputGameName"
+      />
+    </mat-form-field>
+    <button mat-raised-button (click)="getDeals()">Procurar</button>
+  </div>
   <div class="home-daily-promo">
-    <ng-container *ngFor="let deal of deals$ | async">
-      <div class="home-daily-promo-card">
-        <ng-container *ngIf="deal.isOnSale == 1">
-            <div class="promo-on">
-              <h1>EM PROMOÇÃO!</h1>
-            </div>
-        </ng-container>
-        <h2>{{deal.title}}</h2>
+    <ng-container *ngFor="let game of games$ | async">
+      <div
+        class="home-daily-promo-card"
+        [routerLink]="['/game-deals', game.external]"
+      >
+        <h2>{{ game?.external }}</h2>
         <div class="home-daily-promo-card-photo">
-          <img src="{{ deal?.thumb }}" alt="photo" />
-        </div>
-        <div class="home-daily-promo-card-price">
-          <p>Preço normal: ${{ deal?.normalPrice }}</p>
-          <p>Preço atual: ${{ deal?.salePrice }}</p>
-        </div>
-        <div class="home-daily-promo-card-button">
-            <button class="uk-button uk-button-secondary" type="button" (click)="goToUrl(deal.dealID)">Ir para loja</button>
+          <img src="{{ game?.thumb }}" alt="photo" />
         </div>
       </div>
     </ng-container>

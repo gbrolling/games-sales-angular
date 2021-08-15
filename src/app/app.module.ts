@@ -10,13 +10,14 @@ import {HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 import { AboutComponent } from './pages/about/about.component';
+import { GameDealsComponent } from './pages/game-deals/game-deals.component';
 
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, AboutComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, AboutComponent, GameDealsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
